@@ -21,8 +21,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-
 import { BsFileEarmarkPlus } from "react-icons/bs";
 import { ImSpinner2 } from "react-icons/im";
 import { Button } from "@/components/ui/button";
@@ -31,14 +29,21 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
 import { formSchema, formSchemaType } from "@/schemas/form";
+import { createForm } from "@/app/actions/form";
 
 function CreateFormButton() {
   const form = useForm<formSchemaType>({
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit = (values: formSchemaType) => {
+  const onSubmit = async (value: formSchemaType) => {
     try {
+      const formId = await createForm(value);
+      toast({
+        title: "Success",
+        description: "Form created successfully",
+      });
+      console.log(formId);
     } catch (error) {
       toast({
         title: "Error",
@@ -51,7 +56,15 @@ function CreateFormButton() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>Create New Form</Button>
+        <Button
+          variant={"outline"}
+          className="group border border-primary/20 h-[190px] items-center justify-center flex flex-col hover:border-primary hover:cursor-pointer border-dashed gap-4"
+        >
+          <BsFileEarmarkPlus className="h-8 w-8 text-muted-foreground group-hover:text-primary" />
+          <p className="font-bold text-xl text-muted-foreground group-hover:text-primary">
+            Create New Form
+          </p>
+        </Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
@@ -92,7 +105,7 @@ function CreateFormButton() {
           <Button
             className="w-full mt-4"
             disabled={form.formState.isSubmitting}
-            onClick={() => form.handleSubmit(onSubmit)}
+            onClick={form.handleSubmit(onSubmit)}
           >
             {!form.formState.isSubmitting && <span> Save</span>}
             {form.formState.isSubmitting && (
