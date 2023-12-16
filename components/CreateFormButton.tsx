@@ -29,7 +29,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
 import { formSchema, formSchemaType } from "@/schemas/form";
-import { createForm } from "@/app/actions/form";
+import { CreateForm } from "@/app/actions/form";
 
 function CreateFormButton() {
   const form = useForm<formSchemaType>({
@@ -38,7 +38,7 @@ function CreateFormButton() {
 
   const onSubmit = async (value: formSchemaType) => {
     try {
-      const formId = await createForm(value);
+      const formId = await CreateForm(value);
       toast({
         title: "Success",
         description: "Form created successfully",
