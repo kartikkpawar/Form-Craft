@@ -7,8 +7,8 @@ import PublishFormBtn from "./PublishFormBtn";
 
 function FormBuilder({ form }: { form: Form }) {
   return (
-    <div className="flex flex-col w-full ">
-      <div className="flex justify-between border-b-2 p-4 gap-3 items-center">
+    <main className="flex flex-col w-full ">
+      <nav className="flex justify-between border-b-2 p-4 gap-3 items-center">
         <h2 className="truncate font-medium">
           <span className="text-muted-foreground mr-2">Form: {form.name}</span>
         </h2>
@@ -21,8 +21,8 @@ function FormBuilder({ form }: { form: Form }) {
             </Fragment>
           )}
         </div>
-      </div>
-    </div>
+      </nav>
+    </main>
   );
 }
 

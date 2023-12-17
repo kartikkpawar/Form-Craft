@@ -6,7 +6,7 @@ function PublishFormBtn() {
   return (
     <Button className="gap-2" variant={"outline"}>
       <MdOutlinePublish className="h-4 w-4" />
-      Preview
+      Publish
     </Button>
   );
 }
