@@ -4,6 +4,7 @@ import React, { Fragment } from "react";
 import PreviewDialogButton from "./PreviewDialogButton";
 import SaveFormBtn from "./SaveFormBtn";
 import PublishFormBtn from "./PublishFormBtn";
+import Designer from "./Designer";
 
 function FormBuilder({ form }: { form: Form }) {
   return (
@@ -22,6 +23,9 @@ function FormBuilder({ form }: { form: Form }) {
           )}
         </div>
       </nav>
+      <div className="flex w-full items-center justify-center flex-grow relative overflow-y-auto h-[200px] bg-accent bg-[url(/paper.svg)] dark:bg-[url(/paper-dark.svg)]">
+        <Designer />
+      </div>
     </main>
   );
 }
