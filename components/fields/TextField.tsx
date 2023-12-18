@@ -44,7 +44,7 @@ export const TextFiledFormElement: FormElement = {
   type,
   designerComponent: DesignerComponent,
   propertiesComponent: PropertiesComponent,
-  formComponent: () => <div className="text-white">Form Component</div>,
+  formComponent: FormComponent,
   construct: (id: string) => ({
     id,
     type,
@@ -211,5 +211,27 @@ function PropertiesComponent({
         />
       </form>
     </Form>
+  );
+}
+
+function FormComponent({
+  elementInstance,
+}: {
+  elementInstance: FormElementInstance;
+}) {
+  const element = elementInstance as CustomInstance;
+
+  const { label, required, placeholder, helperText } = element.extraAttributes;
+  return (
+    <div className="flex flex-col gap-2 w-full">
+      <Label>
+        {label}
+        {required && "*"}
+      </Label>
+      <Input placeholder={placeholder} />
+      {helperText && (
+        <p className="text-muted-foreground text-[0.8rem]">{helperText}</p>
+      )}
+    </div>
   );
 }
