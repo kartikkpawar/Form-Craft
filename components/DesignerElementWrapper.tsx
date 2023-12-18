@@ -11,7 +11,7 @@ export default function DesignerElementWrapper({
 }: {
   element: FormElementInstance;
 }) {
-  const { removeElement } = useDesigner();
+  const { removeElement, selectedElement, setSelectedElement } = useDesigner();
 
   const DesignerElement = FormElements[element.type].designerComponent;
 
@@ -49,6 +49,10 @@ export default function DesignerElementWrapper({
     <div
       onMouseEnter={() => setMouseIsOver(true)}
       onMouseLeave={() => setMouseIsOver(false)}
+      onClick={(e) => {
+        e.stopPropagation();
+        setSelectedElement(element);
+      }}
       ref={draggable.setNodeRef}
       {...draggable.listeners}
       {...draggable.attributes}
@@ -68,7 +72,10 @@ export default function DesignerElementWrapper({
             <Button
               className="flex justify-center h-full rounded-md rounded-l-none bg-red-500"
               variant={"outline"}
-              onClick={() => removeElement(element.id)}
+              onClick={(e) => {
+                e.stopPropagation();
+                removeElement(element.id);
+              }}
             >
               <BiSolidTrash className="h-6 w-6" />
             </Button>
