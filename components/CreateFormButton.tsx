@@ -111,7 +111,7 @@ function CreateFormButton() {
           >
             {!form.formState.isSubmitting && <span> Save</span>}
             {form.formState.isSubmitting && (
-              <ImSpinner2 clasName="animate-spin" />
+              <ImSpinner2 className="animate-spin" />
             )}
           </Button>
         </DialogFooter>
