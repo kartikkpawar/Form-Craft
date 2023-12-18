@@ -36,7 +36,7 @@ function SaveFormBtn({ id }: { id: number }) {
       onClick={() => startTransition(updateFormContent)}
     >
       <HiSaveAs className="h-4 w-4" />
-      {loading ? <FaSpinner className="animate-spin" /> : "Save"}
+      Save {loading && <FaSpinner className="animate-spin" />}
     </Button>
   );
 }
