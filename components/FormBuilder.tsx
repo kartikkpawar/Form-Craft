@@ -43,7 +43,7 @@ function FormBuilder({ form }: { form: Form }) {
             <PreviewDialogButton />
             {!form.published && (
               <Fragment>
-                <SaveFormBtn />
+                <SaveFormBtn id={form.id} />
                 <PublishFormBtn />
               </Fragment>
             )}
