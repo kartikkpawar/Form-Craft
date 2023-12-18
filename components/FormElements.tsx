@@ -5,11 +5,16 @@ export type ElementsType = "TextFiled";
 
 export type FormElement = {
   type: ElementsType;
+
   designerComponent: React.FC<{
     elementInstance: FormElementInstance;
   }>;
+
   formComponent: React.FC;
-  propertiesComponent: React.FC;
+
+  propertiesComponent: React.FC<{
+    elementInstance: FormElementInstance;
+  }>;
 
   construct: (id: string) => FormElementInstance;
 
