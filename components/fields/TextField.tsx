@@ -4,7 +4,6 @@ import {
   ElementsType,
   FormElement,
   FormElementInstance,
-  FormElements,
   SubmitFunction,
 } from "../FormElements";
 import { MdTextFields } from "react-icons/md";
