@@ -54,7 +54,7 @@ async function FormBuilderPage({ params }: { params: { id: string } }) {
           title="Total Submissions"
           icon={<FaWpforms className="text-yellow-600" />}
           helperText="All time form submissions"
-          value={submissionRate.toLocaleString() || ""}
+          value={submissions.toLocaleString() || ""}
           loading={false}
           className="shadow-md shadow-yellow-600"
         />{" "}
@@ -62,7 +62,7 @@ async function FormBuilderPage({ params }: { params: { id: string } }) {
           title="Submission Rates"
           icon={<HiCursorClick className="text-green-600" />}
           helperText="Visits that result in form submissions"
-          value={visits.toLocaleString() + "%" || ""}
+          value={submissionRate.toLocaleString() + "%" || ""}
           loading={false}
           className="shadow-md shadow-green-600"
         />{" "}
