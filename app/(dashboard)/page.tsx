@@ -22,6 +22,7 @@ import { Badge } from "@/components/ui/badge";
 import { formatDistance } from "date-fns";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { StatsCard } from "@/components/StatsCard";
 
 export default function Home() {
   const dummmyArray = [1, 2, 3, 4];
@@ -95,40 +96,6 @@ function StatsCards(props: StatCardProps) {
         className="shadow-md shadow-red-600"
       />
     </div>
-  );
-}
-
-function StatsCard({
-  title,
-  icon,
-  helperText,
-  loading,
-  className,
-}: {
-  title: string;
-  icon: ReactNode;
-  helperText: string;
-  value: string;
-  loading: boolean;
-  className: string;
-}) {
-  return (
-    <Card className={className}>
-      <CardHeader className="flex flex-row items-center justify-between pb-2">
-        <CardTitle className="text-sm text-muted-foreground">{title}</CardTitle>
-        {icon}
-      </CardHeader>
-      <CardContent>
-        <div className="text-2xl font-bold">
-          {loading && (
-            <Skeleton>
-              <span className="opacity-0">0</span>
-            </Skeleton>
-          )}
-        </div>
-        <p className="text-xs text-muted-foreground pt-1">{helperText}</p>
-      </CardContent>
-    </Card>
   );
 }
 
