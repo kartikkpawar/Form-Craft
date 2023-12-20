@@ -8,7 +8,7 @@ function FormElementsSidebar() {
     <div>
       <p className="text-sm text-foreground/70">Drag and Drop Elements</p>
       <Separator className="my-2" />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 place-items-center">
         <p className="text-sm text-muted-foreground col-span-1 md:col-span-2 my-2 place-self-start">
           Layout Elements
         </p>
@@ -17,12 +17,13 @@ function FormElementsSidebar() {
         <SidebarBtnElement formElement={FormElements.ParagrahField} />
         <SidebarBtnElement formElement={FormElements.SeparatorField} />
         <SidebarBtnElement formElement={FormElements.SpacerField} />
+        <p className="text-sm text-muted-foreground col-span-1 md:col-span-2 my-2 place-self-start">
+          Form Elements
+        </p>
+        <SidebarBtnElement formElement={FormElements.TextFiled} />
+        <SidebarBtnElement formElement={FormElements.NumberField} />
+        <SidebarBtnElement formElement={FormElements.TextAreaField} />
       </div>
-      <p className="text-sm text-muted-foreground col-span-1 md:col-span-2 my-2 place-self-start">
-        Form Elements
-      </p>
-      <SidebarBtnElement formElement={FormElements.TextFiled} />
-      <SidebarBtnElement formElement={FormElements.NumberField} />
     </div>
   );
 }
