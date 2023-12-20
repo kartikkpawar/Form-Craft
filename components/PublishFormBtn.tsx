@@ -16,9 +16,12 @@ import { toast } from "./ui/use-toast";
 import { AlertTitle } from "./ui/alert";
 import { FaSpinner } from "react-icons/fa";
 import { PublishForm } from "@/app/actions/form";
+import { useRouter } from "next/navigation";
 
 function PublishFormBtn({ id }: { id: number }) {
   const [loading, startTransition] = useTransition();
+
+  const router = useRouter();
 
   const publishForm = async () => {
     try {
@@ -27,6 +30,7 @@ function PublishFormBtn({ id }: { id: number }) {
         title: "Success",
         description: "Your form is now available to the public",
       });
+      router.refresh();
     } catch (error) {
       toast({
         title: "Error",
@@ -70,7 +74,7 @@ function PublishFormBtn({ id }: { id: number }) {
               startTransition(publishForm);
             }}
           >
-            Proceed {loading && <FaSpinner className="animate-spin" />}
+            Proceed {loading && <FaSpinner className="animate-spin ml-1" />}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
