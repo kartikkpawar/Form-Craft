@@ -26,7 +26,7 @@ import {
 import { Switch } from "../ui/switch";
 import { cn } from "@/lib/utils";
 
-const type: ElementsType = "TextFiled";
+const type: ElementsType = "TextField";
 
 const extraAttributes = {
   label: "Text field",

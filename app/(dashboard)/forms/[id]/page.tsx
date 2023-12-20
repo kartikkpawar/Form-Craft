@@ -70,7 +70,7 @@ async function FormBuilderPage({ params }: { params: { id: string } }) {
           title="Bounce Rate"
           icon={<TbArrowBounce className="text-red-600" />}
           helperText="Visits that leave without interacting with form"
-          value={submissionRate.toLocaleString() + "%" || ""}
+          value={bounceRate.toLocaleString() + "%" || ""}
           loading={false}
           className="shadow-md shadow-red-600"
         />

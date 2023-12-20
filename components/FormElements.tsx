@@ -12,7 +12,7 @@ import { SelectFieldFormElement } from "./ui/SelectField";
 import { CheckboxFieldFormElement } from "./fields/CheckBoxField";
 
 export type ElementsType =
-  | "TextFiled"
+  | "TextField"
   | "TitleField"
   | "SubTitleField"
   | "ParagrahField"
@@ -64,7 +64,7 @@ type FormElementType = {
   [key in ElementsType]: FormElement;
 };
 export const FormElements: FormElementType = {
-  TextFiled: TextFiledFormElement,
+  TextField: TextFiledFormElement,
   TitleField: TitleFieldFormElement,
   SubTitleField: SubTitleFieldFormElement,
   ParagrahField: ParagprahFieldFormElement,
