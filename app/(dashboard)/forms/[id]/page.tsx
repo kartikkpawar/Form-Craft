@@ -2,6 +2,7 @@ import { GetFormById } from "@/app/actions/form";
 import FormBuilder from "@/components/FormBuilder";
 import FormLinkShare from "@/components/FormLinkShare";
 import { StatsCard } from "@/components/StatsCard";
+import SubmissionsTable from "@/components/SubmissionsTable";
 import VisitBtn from "@/components/VisitBtn";
 import React, { Fragment } from "react";
 import { FaWpforms } from "react-icons/fa";
@@ -74,6 +75,9 @@ async function FormBuilderPage({ params }: { params: { id: string } }) {
           loading={false}
           className="shadow-md shadow-red-600"
         />
+      </div>
+      <div className="container pt-10">
+        <SubmissionsTable id={form.id} />
       </div>
     </Fragment>
   );
