@@ -14,6 +14,9 @@ function FormElementsSidebar() {
         </p>
         <SidebarBtnElement formElement={FormElements.TitleField} />
         <SidebarBtnElement formElement={FormElements.SubTitleField} />
+        <SidebarBtnElement formElement={FormElements.ParagrahField} />
+        <SidebarBtnElement formElement={FormElements.SeparatorField} />
+        <SidebarBtnElement formElement={FormElements.SpacerField} />
       </div>
       <p className="text-sm text-muted-foreground col-span-1 md:col-span-2 my-2 place-self-start">
         Form Elements

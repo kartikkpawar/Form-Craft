@@ -2,8 +2,17 @@ import React from "react";
 import { TextFiledFormElement } from "./fields/TextField";
 import { TitleFieldFormElement } from "./fields/TitleField";
 import { SubTitleFieldFormElement } from "./fields/SubTitle";
+import { ParagprahFieldFormElement } from "./fields/ParagraphField";
+import { SeparatorFieldFormElement } from "./fields/SeparatorField";
+import { SpacerFieldFormElement } from "./fields/SapcerField";
 
-export type ElementsType = "TextFiled" | "TitleField" | "SubTitleField";
+export type ElementsType =
+  | "TextFiled"
+  | "TitleField"
+  | "SubTitleField"
+  | "ParagrahField"
+  | "SeparatorField"
+  | "SpacerField";
 
 export type SubmitFunction = (key: string, value: string) => void;
 
@@ -48,4 +57,7 @@ export const FormElements: FormElementType = {
   TextFiled: TextFiledFormElement,
   TitleField: TitleFieldFormElement,
   SubTitleField: SubTitleFieldFormElement,
+  ParagrahField: ParagprahFieldFormElement,
+  SeparatorField: SeparatorFieldFormElement,
+  SpacerField: SpacerFieldFormElement,
 };
