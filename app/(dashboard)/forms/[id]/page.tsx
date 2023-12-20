@@ -1,5 +1,4 @@
 import { GetFormById } from "@/app/actions/form";
-import FormBuilder from "@/components/FormBuilder";
 import FormLinkShare from "@/components/FormLinkShare";
 import { StatsCard } from "@/components/StatsCard";
 import SubmissionsTable from "@/components/SubmissionsTable";

@@ -8,6 +8,7 @@ export function StatsCard({
   helperText,
   loading,
   className,
+  value,
 }: {
   title: string;
   icon: ReactNode;
@@ -24,10 +25,12 @@ export function StatsCard({
       </CardHeader>
       <CardContent>
         <div className="text-2xl font-bold">
-          {loading && (
+          {loading ? (
             <Skeleton>
               <span className="opacity-0">0</span>
             </Skeleton>
+          ) : (
+            value
           )}
         </div>
         <p className="text-xs text-muted-foreground pt-1">{helperText}</p>
