@@ -23,6 +23,7 @@ function FormElementsSidebar() {
         <SidebarBtnElement formElement={FormElements.TextFiled} />
         <SidebarBtnElement formElement={FormElements.NumberField} />
         <SidebarBtnElement formElement={FormElements.TextAreaField} />
+        <SidebarBtnElement formElement={FormElements.DateField} />
       </div>
     </div>
   );
