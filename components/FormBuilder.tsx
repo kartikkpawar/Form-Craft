@@ -35,7 +35,7 @@ function FormBuilder({ form }: { form: Form }) {
   const [isReady, setIsReady] = useState<boolean>(false);
 
   useEffect(() => {
-    if (!isReady) return;
+    if (isReady) return;
     const elements = JSON.parse(form.content);
     setElements(elements);
     setIsReady(true);
