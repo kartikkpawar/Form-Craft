@@ -1,17 +1,12 @@
-import Logo from "@/components/Logo";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
-import React, { ReactNode } from "react";
+import React from "react";
+import { ImSpinner2 } from "react-icons/im";
 
-function Layout({ children }: { children: ReactNode }) {
+function Loading() {
   return (
-    <div className="flex flex-col min-h-screen min-w-full bg-background max-h-screen">
-      <nav className="flex justify-between border-b border-border h-[60px] px-4 py-2 items-center">
-        <Logo />
-        <ThemeSwitcher />
-      </nav>
-      <main className="flex w-full flex-grow">{children}</main>
+    <div className=" flex items-center justify-center w-full h-full">
+      <ImSpinner2 className="animate-spin h-12 w-12" />
     </div>
   );
 }
 
-export default Layout;
+export default Loading;
