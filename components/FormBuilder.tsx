@@ -37,15 +37,16 @@ function FormBuilder({ form }: { form: Form }) {
   });
 
   const sensors = useSensors(mouseSensor, touchSensor);
-  const { setElements } = useDesigner();
+  const { setElements, setSelectedElement } = useDesigner();
   const [isReady, setIsReady] = useState<boolean>(false);
 
   useEffect(() => {
     if (isReady) return;
     const elements = JSON.parse(form.content);
     setElements(elements);
+    setSelectedElement(null);
     setIsReady(true);
-  }, [form, setElements]);
+  }, [form, setElements, setSelectedElement]);
 
   if (!isReady) {
     return (
