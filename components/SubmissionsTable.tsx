@@ -9,7 +9,9 @@ import {
   TableHeader,
   TableRow,
 } from "./ui/table";
-import { formatDistance } from "date-fns";
+import { Badge } from "./ui/badge";
+import { Checkbox } from "./ui/checkbox";
+import { format, formatDistance } from "date-fns";
 
 async function SubmissionsTable({ id }: { id: number }) {
   const form = await GetFormSubmissions(id);
@@ -95,8 +97,19 @@ async function SubmissionsTable({ id }: { id: number }) {
 export default SubmissionsTable;
 
 function RowCell({ type, value }: { type: ElementsType; value: string }) {
-  console.log(value, "VALUE");
-
   let node: ReactNode = value;
+
+  switch (type) {
+    case "DateField":
+      if (!value) break;
+      const date = new Date(value);
+      node = <Badge variant={"outline"}>{format(date, "dd/MM/yyyy")}</Badge>;
+      break;
+    case "CheckboxField":
+      const checked = value === "true";
+      node = <Checkbox checked={checked} disabled />;
+      break;
+  }
+
   return <TableCell>{node}</TableCell>;
 }
