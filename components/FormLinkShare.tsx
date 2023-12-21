@@ -22,7 +22,7 @@ function FormLinkShare({ shareURL }: { shareURL: string }) {
       <Button
         className="w-[250px]"
         onClick={() => {
-          navigator.clipboard.writeText(shareURL);
+          navigator.clipboard.writeText(shareLink);
           toast({
             title: "Copied!",
             description: "Linkk copied to clipboard",
