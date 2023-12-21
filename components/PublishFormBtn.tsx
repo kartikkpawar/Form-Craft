@@ -53,7 +53,7 @@ function PublishFormBtn({ id }: { id: number }) {
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertTitle>Are you absolutelt sure?</AlertTitle>
+          <AlertTitle>Are you absolutely sure?</AlertTitle>
           <AlertDialogDescription>
             This action cannot be undone. After publishing you will not be able
             to edit this form.

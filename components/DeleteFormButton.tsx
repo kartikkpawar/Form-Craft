@@ -46,7 +46,7 @@ function DeleteFormButton({ id }: { id: number }) {
     <AlertDialog>
       <AlertDialogTrigger asChild>
         <Button
-          className="w-full mt-2 text-muted gap-4"
+          className="w-full mt-2 text-muted gap-4 dark:text-white"
           variant={"destructive"}
         >
           Delete this form <BiTrashAlt className="" />
@@ -54,7 +54,7 @@ function DeleteFormButton({ id }: { id: number }) {
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertTitle>Are you absolutelt sure?</AlertTitle>
+          <AlertTitle>Are you absolutely sure?</AlertTitle>
           <AlertDialogDescription>
             This action cannot be undone. After deleting you will not be able to
             recover.

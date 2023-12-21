@@ -101,7 +101,7 @@ function StatsCards(props: StatCardProps) {
 }
 
 function FormCardSkeleton() {
-  return <Skeleton className="border-2 border-primary/20 h-[190px] w-full" />;
+  return <Skeleton className="border-2 border-primary/20 h-[230px] w-full" />;
 }
 
 async function FormCards() {
