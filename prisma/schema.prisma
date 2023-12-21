@@ -25,8 +25,7 @@ model Form{
   submissions Int @default(0)
 
   shareURL String @default(uuid()) @unique
-  FormSubmissions FormSubmissions[]
-
+  FormSubmissions FormSubmissions[] 
   @@unique([name,userId])
 }
 
@@ -34,7 +33,7 @@ model FormSubmissions{
     id Int @id @default(autoincrement())
     createdAt DateTime @default(now())
     formId Int
-    form Form @relation(fields: [formId],references: [id])
+    form Form @relation(fields: [formId],references: [id],onDelete: Cascade)
     content String
 
 }

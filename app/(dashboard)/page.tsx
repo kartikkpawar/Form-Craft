@@ -1,4 +1,4 @@
-import React, { Fragment, ReactNode, Suspense } from "react";
+import React, { Fragment, Suspense } from "react";
 import { GetFormStats, GetForms } from "../actions/form";
 import { LuView } from "react-icons/lu";
 import { FaWpforms } from "react-icons/fa";
@@ -23,6 +23,7 @@ import { formatDistance } from "date-fns";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { StatsCard } from "@/components/StatsCard";
+import DeleteFormButton from "@/components/DeleteFormButton";
 
 export default function Home() {
   const dummmyArray = [1, 2, 3, 4];
@@ -142,19 +143,23 @@ function FormCard({ form }: { form: Form }) {
         {form.description || "No Description available"}
       </CardContent>
       <CardFooter>
-        {form.published ? (
-          <Button asChild className="w-full mt-2 text-muted gap-4">
-            <Link href={`/forms/${form.id}`}>
-              View Submissions <BiRightArrowAlt className="" />
-            </Link>
-          </Button>
-        ) : (
-          <Button asChild className="w-full mt-2 text-muted gap-4">
-            <Link href={`/builder/${form.id}`}>
-              Edit Form <FaEdit className="" />
-            </Link>
-          </Button>
-        )}
+        <div className="flex flex-col w-full">
+          {form.published ? (
+            <Button asChild className="w-full mt-2 text-muted gap-4">
+              <Link href={`/forms/${form.id}`}>
+                View Submissions <BiRightArrowAlt className="" />
+              </Link>
+            </Button>
+          ) : (
+            <Button asChild className="w-full mt-2 text-muted gap-4">
+              <Link href={`/builder/${form.id}`}>
+                Edit Form <FaEdit className="" />
+              </Link>
+            </Button>
+          )}
+
+          <DeleteFormButton id={form.id} />
+        </div>
       </CardFooter>
     </Card>
   );
