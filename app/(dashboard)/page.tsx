@@ -146,13 +146,13 @@ function FormCard({ form }: { form: Form }) {
         <div className="flex flex-col w-full">
           {form.published ? (
             <Button asChild className="w-full mt-2 text-muted gap-4">
-              <Link href={`/dashboard/forms/${form.id}`}>
+              <Link href={`/forms/${form.id}`}>
                 View Submissions <BiRightArrowAlt className="" />
               </Link>
             </Button>
           ) : (
             <Button asChild className="w-full mt-2 text-muted gap-4">
-              <Link href={`/dashboard/builder/${form.id}`}>
+              <Link href={`/builder/${form.id}`}>
                 Edit Form <FaEdit className="" />
               </Link>
             </Button>
