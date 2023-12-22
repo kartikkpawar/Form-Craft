@@ -19,7 +19,7 @@ import { toast } from "./ui/use-toast";
 import { DeleteForm } from "@/app/actions/form";
 import { FaSpinner } from "react-icons/fa";
 
-function DeleteFormButton({ id }: { id: number }) {
+function DeleteFormButton({ id }: { id: string }) {
   const [loading, startTransition] = useTransition();
 
   const router = useRouter();
@@ -49,7 +49,7 @@ function DeleteFormButton({ id }: { id: number }) {
           className="w-full mt-2 text-muted gap-4 dark:text-white"
           variant={"destructive"}
         >
-          Delete this form <BiTrashAlt className="" />
+          Delete form <BiTrashAlt className="" />
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>

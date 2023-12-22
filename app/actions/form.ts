@@ -1,9 +1,12 @@
 "use server";
-import prisma from "@/lib/prisma";
+import { PrismaClient } from "@prisma/client";
+
 import { formSchema, formSchemaType } from "@/schemas/form";
 import { currentUser } from "@clerk/nextjs";
 
 class UserNotFoundErr extends Error {}
+
+const prisma = new PrismaClient();
 
 export async function GetFormStats() {
   const user = await currentUser();
@@ -74,7 +77,7 @@ export async function GetForms() {
     },
   });
 }
-export async function GetFormById(id: number) {
+export async function GetFormById(id: string) {
   const user = await currentUser();
   if (!user) {
     throw new UserNotFoundErr();
@@ -88,7 +91,7 @@ export async function GetFormById(id: number) {
   });
 }
 
-export async function UpdateFormContent(id: number, jsonConent: string) {
+export async function UpdateFormContent(id: string, jsonConent: string) {
   const user = await currentUser();
   if (!user) {
     throw new UserNotFoundErr();
@@ -104,7 +107,7 @@ export async function UpdateFormContent(id: number, jsonConent: string) {
     },
   });
 }
-export async function PublishForm(id: number) {
+export async function PublishForm(id: string) {
   const user = await currentUser();
   if (!user) {
     throw new UserNotFoundErr();
@@ -155,7 +158,7 @@ export async function SubmitForm(formURL: string, content: string) {
     },
   });
 }
-export async function GetFormSubmissions(id: number) {
+export async function GetFormSubmissions(id: string) {
   const user = await currentUser();
   if (!user) {
     throw new UserNotFoundErr();
@@ -172,7 +175,7 @@ export async function GetFormSubmissions(id: number) {
   });
 }
 
-export async function DeleteForm(id: number) {
+export async function DeleteForm(id: string) {
   const user = await currentUser();
   if (!user) {
     throw new UserNotFoundErr();

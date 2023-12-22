@@ -4,7 +4,7 @@ import React from "react";
 
 async function BuilderPage({ params }: { params: { id: string } }) {
   const { id } = params;
-  const form = await GetFormById(Number(id));
+  const form = await GetFormById(id);
 
   if (!form) {
     throw new Error("Form Not Found");

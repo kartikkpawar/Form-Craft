@@ -13,7 +13,7 @@ import { Badge } from "./ui/badge";
 import { Checkbox } from "./ui/checkbox";
 import { format, formatDistance } from "date-fns";
 
-async function SubmissionsTable({ id }: { id: number }) {
+async function SubmissionsTable({ id }: { id: string }) {
   const form = await GetFormSubmissions(id);
 
   if (!form) {

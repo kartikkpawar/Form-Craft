@@ -18,7 +18,7 @@ import { FaSpinner } from "react-icons/fa";
 import { PublishForm } from "@/app/actions/form";
 import { useRouter } from "next/navigation";
 
-function PublishFormBtn({ id }: { id: number }) {
+function PublishFormBtn({ id }: { id: string }) {
   const [loading, startTransition] = useTransition();
 
   const router = useRouter();
